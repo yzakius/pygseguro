@@ -9,6 +9,7 @@ Doc da API: https://dev.pagseguro.uol.com.br/reference#autenticacao
 config_padrao = None
 
 PRODUCAO = 'https://ws.pagseguro.uol.com.br'
+SANDBOX = 'https://ws.sandbox.pagseguro.uol.com.br'
 
 
 class Config():
