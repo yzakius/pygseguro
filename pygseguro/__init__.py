@@ -4,13 +4,15 @@ Esse módulo implementa o padrão de projeto Fachada de forma pytonica.
 Ele é interface para acessar todos elememntos da biblioteca
 """
 
-import pygseguro.config as _config
+from pygseguro import config as _config
+from pygseguro.plano_recorrente_automatico import PlanoPagamentoRecorrenteAutomatico as _P
 
 __version__ = '0.1'
 
 ConfigConta = _config.ConfigConta  # Dando visibilidade na fachada para a classe ConfigConta
 ConfigApp = _config.ConfigApp
 Config = _config.Config
+PlanoPagamentoRecorrenteAutomatico = _P
 
 
 def apagar_config_padrao() -> None:
@@ -20,12 +22,7 @@ def apagar_config_padrao() -> None:
     set_config_padrao(None)
 
 
-def get_config_padrao() -> Config:
-    """
-    Função que retorna configuração padrão atual da aplicação
-    :return: Configuração atual
-    """
-    return _config.config_padrao
+get_config_padrao = _config.get_config_padrao
 
 
 def set_config_padrao(config: Config):

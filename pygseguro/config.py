@@ -80,3 +80,11 @@ class ConfigApp(Config):
         :return:
         """
         return f'appID={self.app_id}&appKey={self.app_key}'
+
+
+def get_config_padrao() -> Config:
+    """
+    Função que retorna configuração padrão atual da aplicação
+    :return: Configuração atual
+    """
+    return config_padrao

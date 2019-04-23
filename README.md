@@ -63,6 +63,32 @@ ConfigApp(app_id='1234', app_key='xpto')
 ```
 
 
+# Criando planos de [pagamento recorrente automático](https://dev.pagseguro.uol.com.br/reference#api-pagamento-recorrente-criacao-do-plano)
+
+```python
+>>> from pygseguro import PlanoPagamentoRecorrenteAutomatico
+>>> from decimal import Decimal
+>>> pagamento_recorrente_automatico=PlanoPagamentoRecorrenteAutomatico(
+...    redirect_url='https://seusite.com.br/obrigado',
+...    reference='SEU_CODIGO_DE_REFERENCIA',
+...    pre_approval_name='Plano Turma de Curso de Python',        
+...    pre_approval_period='MONTHLY',        
+...    pre_approval_amount_per_payment = Decimal('180.00'),         
+...    pre_approval_membership_fee = Decimal('30.39'),        
+...    pre_approval_trial_period_duration = 2,        
+...    pre_approval_expiration_value=10,        
+...    pre_approval_expiration_unit='MONTHS',       
+...    pre_approval_details='Plano de pagamento da turma Luciano Ramalho',        
+...    pre_approval_cancel_url='https://seusite.com.br/cancelar',        
+...    pre_approval_review_url='https://seusite.com.br/cancelar',        
+...    pre_approval_max_uses=100,        
+...    pre_approval_receiver_email='renzo@python.pro.br'        
+... )
+>>> pagamento_recorrente_automatico.criar_no_pagseguro()
+
+```
+
+
 
 # Como contribuir
 
